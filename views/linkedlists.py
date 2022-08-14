@@ -82,9 +82,10 @@ class SinglyLinkedListView(object):
 			p = p.next
 
 		if found:
-			parent.next = p.next
+			if parent: parent.next = p.next
+			else: 
+				self.root = p.next
 			self.info = 'FOUND'
-			self.highlighted_index += 1
 			wrapper(self.view)
 			self.arr.remove(val)
 		else:

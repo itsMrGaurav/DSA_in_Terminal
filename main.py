@@ -8,7 +8,7 @@ from views.binarysearch import BinarySearchView
 
 
 def check_terminal_size(h, w):
-	if w < 101 and h < 26:
+	if w < 101 and h < 26:	
 		print('Please maximize your terminal and try again !!')
 		exit(0)
 	return True
@@ -156,6 +156,7 @@ def binary_search(w):
 				n = abs(int(input("Enter size: ")))
 				n = min(16, n)
 				values = [randint(10,99) for _ in range(n)]
+				values.sort()
 			except Exception as e:
 				print('Incorrect input value.')
 				return
